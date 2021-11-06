@@ -1,0 +1,14 @@
+.Headline {
+  display: inline-block;
+}
+
+.Apptitle {
+  background-color: $color-yellow;
+  padding: 0 2.2rem 0 6.7rem;
+  margin-bottom: 0.8rem;
+  &-author {
+    padding: 0 2.2rem 0 6.7rem;
+    color: $color-font-light;
+    background-color: $color-dark-grey;
+  }
+}

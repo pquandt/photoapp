@@ -1,0 +1,10 @@
+.progress-bar {
+  height: 0.5rem;
+  background-color: $color-yellow;
+  border: 1px solid black;
+  margin-top: 2rem;
+  &-wrap {
+    margin: auto;
+    width: 80%;
+  }
+}
