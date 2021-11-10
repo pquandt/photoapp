@@ -67,9 +67,9 @@ label {
     border: 0.3rem solid white; }
 
 .deleteBtn {
-  position: fixed;
-  right: 16%;
-  top: 50%; }
+  position: absolute;
+  top: 5%;
+  right: 2%; }
   .deleteBtn:hover {
     cursor: pointer; }
 
@@ -118,7 +118,7 @@ label {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.8; }
+    opacity: 0.5; }
     .img-wrap img:hover {
       opacity: 1;
       cursor: pointer;

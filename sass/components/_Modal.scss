@@ -16,9 +16,9 @@
 }
 
 .deleteBtn {
-  position: fixed;
-  right: 16%;
-  top: 50%;
+  position: absolute;
+  top: 5%;
+  right: 2%;
   &:hover {
     cursor: pointer;
   }

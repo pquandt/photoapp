@@ -15,9 +15,9 @@ export default function Modal({ selectedImg, setSelectedImg }: any) {
     <div>
       <div className="backdrop" onClick={handleClick}>
         <img src={selectedImg} alt="big pic" />
-      </div>
-      <div className="deleteBtn">
-        <RoundButton onClick={deleteData} text="🗑" />
+        <div className="deleteBtn">
+          <RoundButton onClick={deleteData} text="🗑" />
+        </div>
       </div>
     </div>
   );
