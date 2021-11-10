@@ -5,17 +5,24 @@ import useFirestore from "../hooks/useFirestore";
 export default function Filter() {
   const { docs } = useFirestore("images");
 
+  let array: any = [];
+  docs.map((doc: any) => array.push({ name: doc.tag }));
+  function getUniqueListBy(array: any, key: any) {
+    return [...new Map(array.map((item: any) => [item[key], item])).values()];
+  }
+  const unique = getUniqueListBy(array, "name");
+
   return (
     <div>
       <div className="filter">
-        {docs &&
-          docs.map(
+        {unique &&
+          unique.map(
             (doc: any) =>
-              doc.tag && (
-                <div className="filter-item" key={doc.id}>
+              doc.name && (
+                <div className="filter-item" key={doc.name}>
                   <RoundButton
                     onClick={() => {}}
-                    text={doc.tag}
+                    text={doc.name}
                     fontsize={24}
                   />
                 </div>
