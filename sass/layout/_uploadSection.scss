@@ -21,3 +21,16 @@
     }
   }
 }
+
+.filter {
+  margin-top: 2%;
+  cursor: pointer;
+  display: flex;
+  &-item {
+    margin-right: 2rem;
+  }
+}
+
+.output-text {
+  font-size: 2rem;
+}

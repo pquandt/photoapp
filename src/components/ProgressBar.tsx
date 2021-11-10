@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
 
-const ProgressBar = ({ file, setFile }: any) => {
-  const { url, progress } = useStorage(file);
+const ProgressBar = ({ file, setFile, tag, setTag }: any) => {
+  const { url, progress } = useStorage(file, tag);
 
   useEffect(() => {
     if (url) {
       setFile(null);
+      setTag(null);
     }
-  }, [url, setFile]);
+  }, [url, setFile, setTag]);
 
   return (
     <div className="progress-bar-wrap">

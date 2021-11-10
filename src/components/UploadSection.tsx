@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
+import Filter from "./Filter";
 
 export default function UploadSection() {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState("");
+  const [tagInput, setTagInput] = useState("");
+  const [tag, setTag] = useState("");
 
   const types = ["image/png", "image/jpeg"];
 
@@ -16,19 +19,47 @@ export default function UploadSection() {
       : setError("error");
   };
 
+  const tagBtnClick = (e: any) => {
+    e.preventDefault();
+    setTag(tagInput);
+    setTagInput("");
+  };
+
   return (
     <div>
       <section className="uploadSection">
         <form>
+          <input
+            type="text"
+            placeholder="tag"
+            value={tagInput}
+            onChange={(e) => setTagInput(e.target.value)}
+          />
+          <button type="submit" onClick={tagBtnClick}>
+            ok
+          </button>
           <label>
             <input type="file" onChange={changeHandle} />
             <span>+</span>
           </label>
           <div className="output">
             {error && <div className="error">{error}</div>}
-            {file && <div>{file.name}</div>}
-            {file && <ProgressBar file={file} setFile={setFile} />}
+            {file && (
+              <div className="output-text">
+                {file.name} selected
+                <p>Please also set tag and press "ok"</p>
+              </div>
+            )}
+            {file && tag && (
+              <ProgressBar
+                file={file}
+                setFile={setFile}
+                tag={tag}
+                setTag={setTag}
+              />
+            )}
           </div>
+          <Filter />
         </form>
       </section>
     </div>

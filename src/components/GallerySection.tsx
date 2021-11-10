@@ -13,12 +13,11 @@ export default function GallerySection({ setSelectedImg }: selectedImg) {
     <div className="img-grid">
       {docs &&
         docs.map((doc: any) => (
-          <div
-            className="img-wrap"
-            key={doc.id}
-            onClick={() => setSelectedImg(doc.url)}
-          >
-            <img src={doc.url} alt="imagecouldntbefound" />
+          <div key={doc.id}>
+            <p>{doc.tag}</p>
+            <div className="img-wrap" onClick={() => setSelectedImg(doc.url)}>
+              <img src={doc.url} alt="imagecouldntbefound" />
+            </div>
           </div>
         ))}
     </div>

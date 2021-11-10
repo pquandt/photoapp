@@ -4,7 +4,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4rem;
+    & p {
+      font-size: 2rem;
+    }
   }
+
   &-wrap {
     overflow: hidden;
     height: 0;

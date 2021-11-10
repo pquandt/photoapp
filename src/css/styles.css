@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
 .RoundButton {
+  display: inline-block;
   border-radius: 4rem;
   padding: 0.5rem 2rem;
-  font-size: 4rem;
   font-weight: 300;
   background-color: #262626;
   color: #d4d800; }
@@ -105,11 +105,23 @@ label {
       .uploadSection-box-text .yellowtext {
         color: #d4d800; }
 
+.filter {
+  margin-top: 2%;
+  cursor: pointer;
+  display: flex; }
+  .filter-item {
+    margin-right: 2rem; }
+
+.output-text {
+  font-size: 2rem; }
+
 .img-grid {
   margin: 2rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4rem; }
+  .img-grid p {
+    font-size: 2rem; }
 
 .img-wrap {
   overflow: hidden;
