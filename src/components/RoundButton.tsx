@@ -1,7 +1,7 @@
 import React from "react";
 
 type ButtonText = {
-  onClick: () => void;
+  onClick: any;
   text: string;
 };
 

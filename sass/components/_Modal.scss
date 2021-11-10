@@ -14,3 +14,12 @@
     border: 0.3rem solid white;
   }
 }
+
+.deleteBtn {
+  position: fixed;
+  right: 16%;
+  top: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+}

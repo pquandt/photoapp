@@ -1,4 +1,6 @@
 import React from "react";
+import RoundButton from "./RoundButton";
+import useDelete from "../hooks/useDelete";
 
 export default function Modal({ selectedImg, setSelectedImg }: any) {
   const handleClick = (e: any) => {
@@ -6,9 +8,17 @@ export default function Modal({ selectedImg, setSelectedImg }: any) {
       setSelectedImg(null);
     }
   };
+
+  const deleteData = useDelete(selectedImg, setSelectedImg);
+
   return (
-    <div className="backdrop" onClick={handleClick}>
-      <img src={selectedImg} alt="big pic" />
+    <div>
+      <div className="backdrop" onClick={handleClick}>
+        <img src={selectedImg} alt="big pic" />
+      </div>
+      <div className="deleteBtn">
+        <RoundButton onClick={deleteData} text="🗑" />
+      </div>
     </div>
   );
 }
