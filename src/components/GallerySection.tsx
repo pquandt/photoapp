@@ -1,14 +1,23 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
 
-export default function GallerySection() {
+type selectedImg = {
+  // setSelectedImg: (url: string) => void;
+  setSelectedImg: any;
+};
+
+export default function GallerySection({ setSelectedImg }: selectedImg) {
   const { docs } = useFirestore("images");
 
   return (
     <div className="img-grid">
       {docs &&
         docs.map((doc: any) => (
-          <div className="img-wrap" key={doc.id}>
+          <div
+            className="img-wrap"
+            key={doc.id}
+            onClick={() => setSelectedImg(doc.url)}
+          >
             <img src={doc.url} alt="imagecouldntbefound" />
           </div>
         ))}
