@@ -23,3 +23,12 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 458px) {
+  .deleteBtn {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
