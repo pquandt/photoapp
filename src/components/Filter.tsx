@@ -15,6 +15,13 @@ export default function Filter({ setFilterStatus }: any) {
   return (
     <div>
       <div className="filter">
+        <div className="filter-item">
+          <RoundButton
+            onClick={() => setFilterStatus(null)}
+            text={"clear"}
+            fontsize={24}
+          />
+        </div>
         {unique &&
           unique.map(
             (doc: any) =>
