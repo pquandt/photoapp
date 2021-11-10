@@ -1,12 +1,7 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
 
-type selectedImg = {
-  // setSelectedImg: (url: string) => void;
-  setSelectedImg: any;
-};
-
-export default function GallerySection({ setSelectedImg }: selectedImg) {
+export default function GallerySection({ filterStatus, setSelectedImg }: any) {
   const { docs } = useFirestore("images");
 
   return (

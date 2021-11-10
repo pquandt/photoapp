@@ -7,12 +7,7 @@ type ButtonText = {
   active?: boolean;
 };
 
-export default function RoundButton({
-  text,
-  onClick,
-  fontsize,
-  active,
-}: ButtonText) {
+export default function RoundButton({ text, onClick, fontsize }: ButtonText) {
   return (
     <div
       className="RoundButton"

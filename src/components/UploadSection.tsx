@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import Filter from "./Filter";
 
-export default function UploadSection() {
+export default function UploadSection({ setFilterStatus }: any) {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState("");
   const [tagInput, setTagInput] = useState("");
@@ -59,7 +59,7 @@ export default function UploadSection() {
               />
             )}
           </div>
-          <Filter />
+          <Filter setFilterStatus={setFilterStatus} />
         </form>
       </section>
     </div>
