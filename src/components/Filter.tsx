@@ -20,6 +20,7 @@ export default function Filter({ setFilter, filter }: any) {
             onClick={() => setFilter(null)}
             text={"clear"}
             fontsize={24}
+            filter={""}
           />
         </div>
         {unique &&

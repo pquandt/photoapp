@@ -4,7 +4,6 @@ type ButtonText = {
   onClick: any;
   text: string;
   fontsize: number;
-  active?: boolean;
   filter?: string;
   docName?: any;
 };
