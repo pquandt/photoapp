@@ -3,7 +3,7 @@ import ProgressBar from "./ProgressBar";
 import Filter from "./Filter";
 import RoundButton from "./RoundButton";
 
-export default function Upload({ setFilter }: any) {
+export default function Upload({ setFilter, filter }: any) {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState("");
   const [tagInput, setTagInput] = useState("");
@@ -58,7 +58,7 @@ export default function Upload({ setFilter }: any) {
               />
             )}
           </div>
-          <Filter setFilter={setFilter} />
+          <Filter setFilter={setFilter} filter={filter} />
         </form>
       </div>
     </div>

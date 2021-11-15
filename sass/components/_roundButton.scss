@@ -9,4 +9,16 @@
     color: white;
     cursor: pointer;
   }
+  &-active {
+    display: inline-block;
+    border-radius: 4rem;
+    padding: 0.5rem 2rem;
+    font-weight: 300;
+    background-color: $color-yellow;
+    color: $color-dark-grey;
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
 }

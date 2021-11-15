@@ -9,6 +9,16 @@
   .RoundButton:hover {
     color: white;
     cursor: pointer; }
+  .RoundButton-active {
+    display: inline-block;
+    border-radius: 4rem;
+    padding: 0.5rem 2rem;
+    font-weight: 300;
+    background-color: #d4d800;
+    color: #262626; }
+    .RoundButton-active:hover {
+      color: white;
+      cursor: pointer; }
 
 .Headline {
   display: inline-block; }

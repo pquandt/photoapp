@@ -2,7 +2,7 @@ import React from "react";
 import RoundButton from "./RoundButton";
 import useFirestore from "../hooks/useFirestore";
 
-export default function Filter({ setFilter }: any) {
+export default function Filter({ setFilter, filter }: any) {
   const { docs } = useFirestore("images");
 
   let array: any[] = [];
@@ -28,9 +28,11 @@ export default function Filter({ setFilter }: any) {
               doc.name && (
                 <div className="filter-item" key={doc.name}>
                   <RoundButton
+                    docName={doc.name}
                     onClick={() => setFilter(doc.name)}
                     text={doc.name}
                     fontsize={24}
+                    filter={filter}
                   />
                 </div>
               )
