@@ -32,5 +32,12 @@
 }
 
 .output-text {
+  text-align: center;
+  margin-top: 2rem;
   font-size: 2rem;
+  input {
+    font-family: $primary-font;
+    font-size: 2rem;
+    margin: 1rem 1.5rem;
+  }
 }

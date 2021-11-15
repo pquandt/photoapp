@@ -3,7 +3,12 @@ import RoundButton from "./RoundButton";
 import useDelete from "../hooks/useDelete";
 import useEdit from "../hooks/useEdit";
 
-export default function Modal({ selectedImg, setSelectedImg }: any) {
+type ModalProps = {
+  selectedImg: any;
+  setSelectedImg: any;
+};
+
+export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
   const handleClick = (e: any) => {
     if (e.target.classList.contains("backdrop")) {
       setSelectedImg(null);

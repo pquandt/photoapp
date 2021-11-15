@@ -5,7 +5,7 @@ import useFirestore from "../hooks/useFirestore";
 export default function Filter({ setFilter }: any) {
   const { docs } = useFirestore("images");
 
-  let array: any = [];
+  let array: any[] = [];
   docs.map((doc: any) => array.push({ name: doc.tag }));
   function getUniqueListBy(array: any, key: any) {
     return [...new Map(array.map((item: any) => [item[key], item])).values()];

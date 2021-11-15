@@ -7,7 +7,12 @@ interface firedoc {
   id: string;
 }
 
-export default function GallerySection({ filter, setSelectedImg }: any) {
+interface GalleryProps {
+  filter: string;
+  setSelectedImg: any;
+}
+
+export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
   const { docs } = useFirestore("images");
 
   const filterArray: any[] = [];

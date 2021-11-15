@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import Filter from "./Filter";
+import RoundButton from "./RoundButton";
 
-export default function UploadSection({ setFilter }: any) {
+export default function Upload({ setFilter }: any) {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState("");
   const [tagInput, setTagInput] = useState("");
@@ -29,15 +30,6 @@ export default function UploadSection({ setFilter }: any) {
     <div>
       <div className="uploadSection">
         <form>
-          <input
-            type="text"
-            placeholder="tag"
-            value={tagInput}
-            onChange={(e) => setTagInput(e.target.value)}
-          />
-          <button type="submit" onClick={tagBtnClick}>
-            ok
-          </button>
           <label>
             <input type="file" onChange={changeHandle} />
             <span>+</span>
@@ -47,7 +39,14 @@ export default function UploadSection({ setFilter }: any) {
             {file && (
               <div className="output-text">
                 {file.name} selected
-                <p>Please also set tag and press "ok"</p>
+                <p>Please set a tag and press "ok"</p>
+                <input
+                  type="text"
+                  placeholder="tag"
+                  value={tagInput}
+                  onChange={(e) => setTagInput(e.target.value)}
+                />
+                <RoundButton onClick={tagBtnClick} text="ok" fontsize={18} />
               </div>
             )}
             {file && tag && (

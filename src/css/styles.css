@@ -133,7 +133,13 @@ label {
     margin-right: 2rem; }
 
 .output-text {
+  text-align: center;
+  margin-top: 2rem;
   font-size: 2rem; }
+  .output-text input {
+    font-family: "Source Sans Pro";
+    font-size: 2rem;
+    margin: 1rem 1.5rem; }
 
 .img-grid {
   margin: 2rem auto;
@@ -156,9 +162,9 @@ label {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.5; }
+    opacity: 1; }
     .img-wrap img:hover {
-      opacity: 1;
+      opacity: 0.5;
       cursor: pointer;
       transition-duration: 0.5s; }
 
