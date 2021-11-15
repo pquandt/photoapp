@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import GallerySection from "./components/GallerySection";
-import TopSection from "./components/TopSection";
-import UploadSection from "./components/UploadSection";
+import Gallery from "./components/Gallery";
+import Top from "./components/Top";
+import Upload from "./components/Upload";
 import Modal from "./components/Modal";
 
 function App() {
@@ -10,12 +10,9 @@ function App() {
 
   return (
     <div className="App-wrapper">
-      <TopSection />
-      <UploadSection setFilterStatus={setFilterStatus} />
-      <GallerySection
-        setSelectedImg={setSelectedImg}
-        filterStatus={filterStatus}
-      />
+      <Top />
+      <Upload setFilterStatus={setFilterStatus} />
+      <Gallery setSelectedImg={setSelectedImg} filterStatus={filterStatus} />
       {selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}

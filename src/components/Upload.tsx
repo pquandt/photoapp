@@ -27,7 +27,7 @@ export default function UploadSection({ setFilterStatus }: any) {
 
   return (
     <div>
-      <section className="uploadSection">
+      <div className="uploadSection">
         <form>
           <input
             type="text"
@@ -61,7 +61,7 @@ export default function UploadSection({ setFilterStatus }: any) {
           </div>
           <Filter setFilterStatus={setFilterStatus} />
         </form>
-      </section>
+      </div>
     </div>
   );
 }
