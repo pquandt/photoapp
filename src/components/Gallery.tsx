@@ -24,7 +24,10 @@ export default function GallerySection({ filter, setSelectedImg }: any) {
         filterArray.map((doc: firedoc) => (
           <div key={doc.id}>
             <p>{doc.tag}</p>
-            <div className="img-wrap" onClick={() => setSelectedImg(doc.url)}>
+            <div
+              className="img-wrap"
+              onClick={() => setSelectedImg([doc.url, doc.id])}
+            >
               <img src={doc.url} alt="imagecouldntbefound" />
             </div>
           </div>
@@ -34,7 +37,10 @@ export default function GallerySection({ filter, setSelectedImg }: any) {
         docs.map((doc: firedoc) => (
           <div key={doc.id}>
             <p>{doc.tag}</p>
-            <div className="img-wrap" onClick={() => setSelectedImg(doc.url)}>
+            <div
+              className="img-wrap"
+              onClick={() => setSelectedImg([doc.url, doc.id])}
+            >
               <img src={doc.url} alt="imagecouldntbefound" />
             </div>
           </div>

@@ -7,7 +7,7 @@ import Modal from "./components/Modal";
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
   const [filter, setFilter] = useState("");
-
+  console.log(selectedImg);
   return (
     <div className="App-wrapper">
       <Top />

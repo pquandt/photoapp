@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import RoundButton from "./RoundButton";
 import useDelete from "../hooks/useDelete";
+import useEdit from "../hooks/useEdit";
 
 export default function Modal({ selectedImg, setSelectedImg }: any) {
   const handleClick = (e: any) => {
@@ -10,6 +11,10 @@ export default function Modal({ selectedImg, setSelectedImg }: any) {
   };
 
   const deleteData = useDelete(selectedImg, setSelectedImg);
+  const [edit, setEdit] = useState(false);
+  const [tagInput, setTagInput] = useState("");
+
+  const handleClickTag = useEdit(tagInput, selectedImg, setEdit);
 
   return (
     <div>
@@ -18,6 +23,35 @@ export default function Modal({ selectedImg, setSelectedImg }: any) {
         <div className="deleteBtn">
           <RoundButton onClick={deleteData} text="🗑" fontsize={40} />
         </div>
+        <div className="editTag">
+          <RoundButton
+            onClick={() => {
+              setEdit(!edit);
+            }}
+            text="🖉"
+            fontsize={40}
+          />
+        </div>
+        {edit && (
+          <div className="changeTag">
+            <div>
+              <input
+                type="text"
+                value={tagInput}
+                onChange={(e) => {
+                  setTagInput(e.target.value);
+                }}
+              />
+            </div>
+            <div className="changeTag-btn">
+              <RoundButton
+                onClick={handleClickTag}
+                text="Change Tag"
+                fontsize={16}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

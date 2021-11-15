@@ -12,7 +12,7 @@ const useDelete = (selectedImg: string, setSelectedImg: any) => {
   return async () => {
     //delete databse entry
     const storageRef = collection(projectFirestore, "images");
-    const q = query(storageRef, where("url", "==", selectedImg));
+    const q = query(storageRef, where("url", "==", selectedImg[0]));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((docs) => {
       deleteDoc(doc(projectFirestore, "images", docs.id));

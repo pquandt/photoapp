@@ -7,7 +7,8 @@
   background-color: #262626;
   color: #d4d800; }
   .RoundButton:hover {
-    color: white; }
+    color: white;
+    cursor: pointer; }
 
 .Headline {
   display: inline-block; }
@@ -71,6 +72,25 @@ label {
   right: 2%; }
   .deleteBtn:hover {
     cursor: pointer; }
+
+.editTag {
+  position: absolute;
+  top: 14%;
+  right: 2%; }
+  .editTag:hover {
+    cursor: pointer; }
+
+.changeTag {
+  position: absolute;
+  top: 25%;
+  right: 2%; }
+  .changeTag input {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 15rem; }
+  .changeTag-btn {
+    padding-top: 1rem;
+    text-align: right; }
 
 @media screen and (max-width: 458px) {
   .deleteBtn {

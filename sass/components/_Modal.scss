@@ -24,6 +24,30 @@
   }
 }
 
+.editTag {
+  position: absolute;
+  top: 14%;
+  right: 2%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.changeTag {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  input {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 15rem;
+  }
+  &-btn {
+    padding-top: 1rem;
+    text-align: right;
+  }
+}
+
 @media screen and (max-width: 458px) {
   .deleteBtn {
     display: inline-block;
