@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App-wrapper">
       <Top />
-      <Upload setFilterStatus={setFilter} />
-      <Gallery setSelectedImg={setSelectedImg} setFilter={setFilter} />
+      <Upload setFilter={setFilter} />
+      <Gallery setSelectedImg={setSelectedImg} filter={filter} />
       {selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}
