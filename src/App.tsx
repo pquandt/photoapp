@@ -6,13 +6,13 @@ import Modal from "./components/Modal";
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
-  const [filterStatus, setFilterStatus] = useState("");
+  const [filter, setFilter] = useState("");
 
   return (
     <div className="App-wrapper">
       <Top />
-      <Upload setFilterStatus={setFilterStatus} />
-      <Gallery setSelectedImg={setSelectedImg} filterStatus={filterStatus} />
+      <Upload setFilterStatus={setFilter} />
+      <Gallery setSelectedImg={setSelectedImg} setFilter={setFilter} />
       {selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}

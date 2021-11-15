@@ -7,13 +7,13 @@ interface firedoc {
   id: string;
 }
 
-export default function GallerySection({ filterStatus, setSelectedImg }: any) {
+export default function GallerySection({ filter, setSelectedImg }: any) {
   const { docs } = useFirestore("images");
 
   const filterArray: any[] = [];
 
   docs.forEach((item: firedoc) => {
-    if (item.tag === filterStatus) {
+    if (item.tag === filter) {
       filterArray.push(item);
     }
   });
