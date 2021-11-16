@@ -7,6 +7,8 @@
 }
 
 html {
+  font-family: $primary-font;
+  background-color: $color-light-grey;
   font-size: 62.5%;
   height: 100vh;
   scroll-behavior: smooth;

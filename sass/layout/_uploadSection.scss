@@ -1,43 +1,76 @@
 .uploadSection {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  &-box {
-    display: flex;
-    flex-direction: row;
-    span {
-      display: block;
+  display: flex;
+  margin: 0 3.2rem 2.5rem 3.2rem;
+  padding-top: 3.5rem;
+  justify-content: space-between;
+}
+
+.addPhoto {
+  label {
+    & input {
+      display: none;
     }
-    &-text {
-      color: $color-font-light;
-      font-family: $primary-font;
-      font-size: 2rem;
-      font-weight: 300;
-      padding: 2rem 2rem;
-      background-color: $color-dark-grey;
-      margin-right: 5rem;
-      .yellowtext {
-        color: $color-yellow;
+  }
+  &-Btn {
+    transform: translateY(0.3rem);
+    path {
+      fill: #262626;
+      fill-rule: "nonzero";
+    }
+    g {
+      fill: $color-yellow;
+      &:hover {
+        cursor: pointer;
+        fill: black;
+        color: $color-white;
+        text {
+          fill: white;
+        }
+        path {
+          fill: white;
+        }
       }
+    }
+    text {
+      fill: black;
     }
   }
 }
 
 .filter {
-  margin-top: 2%;
+  &-wrap {
+    display: flex;
+  }
   cursor: pointer;
   display: flex;
+
   &-item {
     margin-right: 2rem;
   }
 }
-
-.output-text {
-  text-align: center;
-  margin-top: 2rem;
+.x {
   font-size: 2rem;
-  input {
-    font-family: $primary-font;
-    font-size: 2rem;
-    margin: 1rem 1.5rem;
+  &:hover {
+    cursor: pointer;
   }
+}
+.output {
+  display: flex;
+  align-items: flex-end;
+  &-text {
+    font-size: 1.8rem;
+  }
+  input {
+    display: block;
+    font-family: $primary-font;
+    font-size: 1.8rem;
+    margin-top: 1.3rem;
+    background-color: #cecece;
+    border: 0;
+    padding: 0.6rem 8rem 0.7rem 1.3rem;
+  }
+}
+
+.progressBar {
+  display: block;
 }

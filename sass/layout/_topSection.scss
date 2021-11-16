@@ -1,3 +1,13 @@
 .topSection {
-  margin-top: 5%;
+  display: flex;
+  background-color: $color-light-grey;
+  padding: 8.4rem 0 3.5rem;
+  justify-content: space-between;
+  p {
+    margin-right: 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    align-self: flex-end;
+    color: $color-dark-grey;
+  }
 }

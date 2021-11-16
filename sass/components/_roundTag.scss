@@ -1,0 +1,19 @@
+.RoundTag {
+  display: inline-block;
+  padding: 0.4rem 2.2rem 0.4rem 2.3rem;
+  border-radius: 1.6rem;
+  border: solid 1px #262626;
+  background-color: $color-white;
+  &:hover {
+    color: #50af47;
+    border-color: #50af47;
+  }
+  &-active {
+    display: inline-block;
+    padding: 0.4rem 2.2rem 0.4rem 2.3rem;
+    border-radius: 1.6rem;
+    border: solid 1px #50af47;
+    background-color: #50af47;
+    color: white;
+  }
+}

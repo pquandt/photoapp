@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import Filter from "./Filter";
-import RoundButton from "./RoundButton";
+import { ReactComponent as AddPhotoBtn } from "../images/addPhotoBtn.svg";
+import YellowBtn from "./YellowBtn";
 
 export default function Upload({ setFilter, filter }: any) {
   const [file, setFile] = useState<File>();
@@ -17,7 +18,7 @@ export default function Upload({ setFilter, filter }: any) {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     selected && types.includes(selected.type)
       ? (setFile(selected), setError(""))
-      : setError("error");
+      : setError("Pls select jpeg or png");
   };
 
   const tagBtnClick = (e: any) => {
@@ -29,37 +30,40 @@ export default function Upload({ setFilter, filter }: any) {
   return (
     <div>
       <div className="uploadSection">
-        <form>
-          <label>
-            <input type="file" onChange={changeHandle} />
-            <span>+</span>
-          </label>
-          <div className="output">
-            {error && <div className="error">{error}</div>}
-            {file && (
-              <div className="output-text">
-                {file.name} selected
-                <p>Please set a tag and press "ok"</p>
-                <input
-                  type="text"
-                  placeholder="tag"
-                  value={tagInput}
-                  onChange={(e) => setTagInput(e.target.value)}
-                />
-                <RoundButton onClick={tagBtnClick} text="ok" fontsize={18} />
-              </div>
-            )}
-            {file && tag && (
+        <div className="output">
+          {error && <div className="error">{error}</div>}
+          {file && (
+            <div className="output-text">
+              "{file.name}" is selected. Please give it a tag.
+              <input
+                type="text"
+                placeholder="tag"
+                value={tagInput}
+                onChange={(e) => setTagInput(e.target.value)}
+              />
+              <YellowBtn onClick={tagBtnClick} text="Confirm" />
+            </div>
+          )}
+
+          {file && tag && (
+            <div className="progressBar">
               <ProgressBar
                 file={file}
                 setFile={setFile}
                 tag={tag}
                 setTag={setTag}
               />
-            )}
-          </div>
-          <Filter setFilter={setFilter} filter={filter} />
-        </form>
+            </div>
+          )}
+          {!file && !tag && <Filter setFilter={setFilter} filter={filter} />}
+        </div>
+
+        <div className="addPhoto">
+          <label>
+            <AddPhotoBtn className="addPhoto-Btn" />
+            <input type="file" onChange={changeHandle} />
+          </label>
+        </div>
       </div>
     </div>
   );

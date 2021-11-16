@@ -1,36 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
-.RoundButton {
+.RoundTag {
   display: inline-block;
-  border-radius: 4rem;
-  padding: 0.5rem 2rem;
-  font-weight: 300;
-  background-color: #262626;
-  color: #d4d800; }
-  .RoundButton:hover {
-    color: white;
-    cursor: pointer; }
-  .RoundButton-active {
+  padding: 0.4rem 2.2rem 0.4rem 2.3rem;
+  border-radius: 1.6rem;
+  border: solid 1px #262626;
+  background-color: #ffffff; }
+  .RoundTag:hover {
+    color: #50af47;
+    border-color: #50af47; }
+  .RoundTag-active {
     display: inline-block;
-    border-radius: 4rem;
-    padding: 0.5rem 2rem;
-    font-weight: 300;
-    background-color: #d4d800;
-    color: #262626; }
-    .RoundButton-active:hover {
-      color: white;
-      cursor: pointer; }
+    padding: 0.4rem 2.2rem 0.4rem 2.3rem;
+    border-radius: 1.6rem;
+    border: solid 1px #50af47;
+    background-color: #50af47;
+    color: white; }
 
 .Headline {
   display: inline-block; }
 
 .Apptitle {
-  background-color: #d4d800;
-  padding: 0 2.2rem 0 6.7rem;
-  margin-bottom: 0.8rem; }
-  .Apptitle-author {
-    padding: 0 2.2rem 0 6.7rem;
-    color: #ffffff;
-    background-color: #262626; }
+  font-size: 3.2rem;
+  padding: 0.5rem 1.4rem 0.5rem 4rem;
+  color: #ffffff;
+  background-color: #262626; }
 
 .progress-bar {
   height: 0.5rem;
@@ -40,26 +33,6 @@
   .progress-bar-wrap {
     margin: auto;
     width: 80%; }
-
-label {
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin: auto;
-  color: black;
-  background-color: #d4d800;
-  font-size: 4rem;
-  text-align: center; }
-  label input {
-    height: 0;
-    width: 0;
-    opacity: 0; }
-  label:hover {
-    background: black;
-    color: white;
-    cursor: pointer; }
 
 .backdrop {
   position: fixed;
@@ -109,62 +82,111 @@ label {
     left: 50%;
     transform: translateX(-50%); } }
 
+.tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background-color: #f9f9f9;
+  font-size: 1.6rem;
+  color: #262626; }
+  .tag-wrap {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(-2.6rem) translateY(-4.3rem); }
+
+.yellow-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #d4d800;
+  font-weight: 400;
+  padding: 1rem 2.5rem;
+  border-radius: 0.8rem; }
+
 .App-wrapper {
   margin: auto;
-  max-width: 1200px; }
+  max-width: 1024px;
+  background-color: #ffffff; }
 
 .topSection {
-  margin-top: 5%; }
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 8.4rem 0 3.5rem;
+  justify-content: space-between; }
+  .topSection p {
+    margin-right: 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    align-self: flex-end;
+    color: #262626; }
 
 .uploadSection {
-  margin-top: 5rem;
-  margin-bottom: 5rem; }
-  .uploadSection-box {
-    display: flex;
-    flex-direction: row; }
-    .uploadSection-box span {
-      display: block; }
-    .uploadSection-box-text {
-      color: #ffffff;
-      font-family: "Source Sans Pro";
-      font-size: 2rem;
-      font-weight: 300;
-      padding: 2rem 2rem;
-      background-color: #262626;
-      margin-right: 5rem; }
-      .uploadSection-box-text .yellowtext {
-        color: #d4d800; }
+  display: flex;
+  margin: 0 3.2rem 2.5rem 3.2rem;
+  padding-top: 3.5rem;
+  justify-content: space-between; }
+
+.addPhoto label input {
+  display: none; }
+
+.addPhoto-Btn {
+  transform: translateY(0.3rem); }
+  .addPhoto-Btn path {
+    fill: #262626;
+    fill-rule: "nonzero"; }
+  .addPhoto-Btn g {
+    fill: #d4d800; }
+    .addPhoto-Btn g:hover {
+      cursor: pointer;
+      fill: black;
+      color: #ffffff; }
+      .addPhoto-Btn g:hover text {
+        fill: white; }
+      .addPhoto-Btn g:hover path {
+        fill: white; }
+  .addPhoto-Btn text {
+    fill: black; }
 
 .filter {
-  margin-top: 2%;
   cursor: pointer;
   display: flex; }
+  .filter-wrap {
+    display: flex; }
   .filter-item {
     margin-right: 2rem; }
 
-.output-text {
-  text-align: center;
-  margin-top: 2rem;
+.x {
   font-size: 2rem; }
-  .output-text input {
+  .x:hover {
+    cursor: pointer; }
+
+.output {
+  display: flex;
+  align-items: flex-end; }
+  .output-text {
+    font-size: 1.8rem; }
+  .output input {
+    display: block;
     font-family: "Source Sans Pro";
-    font-size: 2rem;
-    margin: 1rem 1.5rem; }
+    font-size: 1.8rem;
+    margin-top: 1.3rem;
+    background-color: #cecece;
+    border: 0;
+    padding: 0.6rem 8rem 0.7rem 1.3rem; }
+
+.progressBar {
+  display: block; }
 
 .img-grid {
-  margin: 2rem auto;
+  margin: 0 3.2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem; }
-  .img-grid p {
-    font-size: 2rem; }
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2.5rem; }
 
 .img-wrap {
   overflow: hidden;
-  height: 0;
-  padding: 50%;
+  width: 22.2rem;
+  height: 28rem;
   position: relative;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2); }
+  border-radius: 0.8rem; }
   .img-wrap img {
     min-width: 100%;
     min-height: 100%;
@@ -186,6 +208,8 @@ label {
   box-sizing: inherit; }
 
 html {
+  font-family: "Source Sans Pro";
+  background-color: #f9f9f9;
   font-size: 62.5%;
   height: 100vh;
   scroll-behavior: smooth;
@@ -221,5 +245,5 @@ body {
   color: #262626; }
 
 h1 {
-  font-weight: 300;
-  font-size: 4rem; }
+  font-weight: 400;
+  font-size: 3.2rem; }

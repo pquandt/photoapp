@@ -1,5 +1,6 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
+import Tag from "./Tag";
 
 interface firedoc {
   tag: string;
@@ -28,12 +29,14 @@ export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
       {filterArray.length > 0 &&
         filterArray.map((doc: firedoc) => (
           <div key={doc.id}>
-            <p>{doc.tag}</p>
             <div
               className="img-wrap"
               onClick={() => setSelectedImg([doc.url, doc.id])}
             >
               <img src={doc.url} alt="imagecouldntbefound" />
+            </div>
+            <div className="tag-wrap">
+              <Tag tagName={doc.tag} />
             </div>
           </div>
         ))}
@@ -41,12 +44,14 @@ export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
       {filterArray.length === 0 &&
         docs.map((doc: firedoc) => (
           <div key={doc.id}>
-            <p>{doc.tag}</p>
             <div
               className="img-wrap"
               onClick={() => setSelectedImg([doc.url, doc.id])}
             >
               <img src={doc.url} alt="imagecouldntbefound" />
+            </div>
+            <div className="tag-wrap">
+              <Tag tagName={doc.tag} />
             </div>
           </div>
         ))}

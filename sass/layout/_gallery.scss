@@ -1,20 +1,17 @@
 .img {
   &-grid {
-    margin: 2rem auto;
+    margin: 0 3.2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 4rem;
-    & p {
-      font-size: 2rem;
-    }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2.5rem;
   }
 
   &-wrap {
     overflow: hidden;
-    height: 0;
-    padding: 50%;
+    width: 22.2rem;
+    height: 28rem;
     position: relative;
-    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
 
     img {
       min-width: 100%;
@@ -24,6 +21,7 @@
       top: 0;
       left: 0;
       opacity: 1;
+
       &:hover {
         opacity: 0.5;
         cursor: pointer;

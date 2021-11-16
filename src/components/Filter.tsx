@@ -1,5 +1,5 @@
 import React from "react";
-import RoundButton from "./RoundButton";
+import RoundTag from "./RoundTag";
 import useFirestore from "../hooks/useFirestore";
 
 export default function Filter({ setFilter, filter }: any) {
@@ -13,32 +13,37 @@ export default function Filter({ setFilter, filter }: any) {
   const unique = getUniqueListBy(array, "name");
 
   return (
-    <div>
+    <div className="filter-wrap">
       <div className="filter">
-        <div className="filter-item">
-          <RoundButton
-            onClick={() => setFilter(null)}
-            text={"clear"}
-            fontsize={24}
-            filter={""}
-          />
-        </div>
         {unique &&
           unique.map(
             (doc: any) =>
               doc.name && (
                 <div className="filter-item" key={doc.name}>
-                  <RoundButton
+                  <RoundTag
                     docName={doc.name}
-                    onClick={() => setFilter(doc.name)}
+                    onClick={() => {
+                      setFilter(doc.name);
+                    }}
                     text={doc.name}
-                    fontsize={24}
+                    fontsize={16}
                     filter={filter}
                   />
                 </div>
               )
           )}
       </div>
+      <div className="photocount"></div>
+      {filter && (
+        <div
+          className="x"
+          onClick={() => {
+            setFilter(null);
+          }}
+        >
+          X
+        </div>
+      )}
     </div>
   );
 }

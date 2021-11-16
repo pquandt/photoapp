@@ -4,7 +4,8 @@ import Title from "./Title";
 export default function TopSection() {
   return (
     <div className="topSection">
-      <Title upTitle={"PhotoApp"} downTitle={"Patrick Quandt"} />
+      <Title titlename={">>PhotoApp<<"} />
+      <p>by Patrick Quandt</p>
     </div>
   );
 }
