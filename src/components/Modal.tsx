@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RoundTag from "./RoundTag";
 import useDelete from "../hooks/useDelete";
 import useEdit from "../hooks/useEdit";
+import YellowBtn from "./YellowBtn";
 
 type ModalProps = {
   selectedImg: any;
@@ -26,15 +27,20 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
       <div className="backdrop" onClick={handleClick}>
         <img src={selectedImg} alt="big pic" />
         <div className="deleteBtn">
-          <RoundTag onClick={deleteData} text="🗑" fontsize={40} filter={""} />
+          <YellowBtn
+            onClick={deleteData}
+            text="delete"
+            fontsize={18}
+            filter={""}
+          />
         </div>
         <div className="editTag">
-          <RoundTag
+          <YellowBtn
             onClick={() => {
               setEdit(!edit);
             }}
-            text="🖉"
-            fontsize={40}
+            text="Edit"
+            fontsize={18}
             filter={""}
           />
         </div>

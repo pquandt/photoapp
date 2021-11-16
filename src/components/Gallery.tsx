@@ -29,30 +29,30 @@ export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
       {filterArray.length > 0 &&
         filterArray.map((doc: firedoc) => (
           <div key={doc.id}>
-            <div
+            <figure
               className="img-wrap"
               onClick={() => setSelectedImg([doc.url, doc.id])}
             >
               <img src={doc.url} alt="imagecouldntbefound" />
-            </div>
-            <div className="tag-wrap">
-              <Tag tagName={doc.tag} />
-            </div>
+              <figcaption className="tag-wrap">
+                <Tag tagName={doc.tag} />
+              </figcaption>
+            </figure>
           </div>
         ))}
 
       {filterArray.length === 0 &&
         docs.map((doc: firedoc) => (
           <div key={doc.id}>
-            <div
+            <figure
               className="img-wrap"
               onClick={() => setSelectedImg([doc.url, doc.id])}
             >
               <img src={doc.url} alt="imagecouldntbefound" />
-            </div>
-            <div className="tag-wrap">
-              <Tag tagName={doc.tag} />
-            </div>
+              <figcaption className="tag-wrap">
+                <Tag tagName={doc.tag} />
+              </figcaption>
+            </figure>
           </div>
         ))}
     </div>

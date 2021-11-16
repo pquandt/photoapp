@@ -74,3 +74,12 @@
 .progressBar {
   display: block;
 }
+
+@media screen and(max-width:500px) {
+  .uploadSection {
+    display: block;
+  }
+  .addPhoto {
+    margin-top: 1rem;
+  }
+}

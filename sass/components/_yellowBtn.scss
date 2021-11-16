@@ -5,4 +5,9 @@
   font-weight: 400;
   padding: 1rem 2.5rem;
   border-radius: 0.8rem;
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+    color: $color-white;
+  }
 }

@@ -37,7 +37,7 @@ export default function Upload({ setFilter, filter }: any) {
               "{file.name}" is selected. Please give it a tag.
               <input
                 type="text"
-                placeholder="tag"
+                placeholder="Type tag here"
                 value={tagInput}
                 onChange={(e) => setTagInput(e.target.value)}
               />

@@ -23,6 +23,7 @@
   font-size: 3.2rem;
   padding: 0.5rem 1.4rem 0.5rem 4rem;
   color: #ffffff;
+  margin-right: 2rem;
   background-color: #262626; }
 
 .progress-bar {
@@ -76,11 +77,11 @@
     text-align: right; }
 
 @media screen and (max-width: 458px) {
-  .deleteBtn {
-    display: inline-block;
+  .deleteBtn,
+  .editTag {
+    display: block;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%); } }
+    left: 50%; } }
 
 .tag {
   display: inline-block;
@@ -89,9 +90,11 @@
   font-size: 1.6rem;
   color: #262626; }
   .tag-wrap {
-    display: flex;
-    justify-content: flex-end;
-    transform: translateX(-2.6rem) translateY(-4.3rem); }
+    display: block;
+    text-align: end;
+    margin-right: 2.6rem;
+    transform: translateY(-4.3rem);
+    cursor: pointer; }
 
 .yellow-btn {
   display: inline-block;
@@ -100,6 +103,10 @@
   font-weight: 400;
   padding: 1rem 2.5rem;
   border-radius: 0.8rem; }
+  .yellow-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: #ffffff; }
 
 .App-wrapper {
   margin: auto;
@@ -175,6 +182,12 @@
 .progressBar {
   display: block; }
 
+@media screen and (max-width: 500px) {
+  .uploadSection {
+    display: block; }
+  .addPhoto {
+    margin-top: 1rem; } }
+
 .img-grid {
   margin: 0 3.2rem;
   display: grid;
@@ -182,16 +195,16 @@
   grid-gap: 2.5rem; }
 
 .img-wrap {
-  overflow: hidden;
   width: 22.2rem;
   height: 28rem;
   position: relative;
-  border-radius: 0.8rem; }
+  border-radius: 0.8rem;
+  overflow: hidden; }
   .img-wrap img {
     min-width: 100%;
     min-height: 100%;
     max-width: 150%;
-    position: absolute;
+    max-height: 28rem;
     top: 0;
     left: 0;
     opacity: 1; }
@@ -199,6 +212,18 @@
       opacity: 0.5;
       cursor: pointer;
       transition-duration: 0.5s; }
+
+@media screen and (max-width: 900px) {
+  .img-grid {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media screen and (max-width: 740px) {
+  .img-grid {
+    grid-template-columns: 1fr 1fr; } }
+
+@media screen and (max-width: 500px) {
+  .img-grid {
+    grid-template-columns: 1fr; } }
 
 *,
 *::after,

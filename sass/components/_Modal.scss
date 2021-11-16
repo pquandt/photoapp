@@ -49,10 +49,10 @@
 }
 
 @media screen and (max-width: 458px) {
-  .deleteBtn {
-    display: inline-block;
+  .deleteBtn,
+  .editTag {
+    display: block;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
   }
 }

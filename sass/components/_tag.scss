@@ -5,9 +5,10 @@
   font-size: 1.6rem;
   color: $color-dark-grey;
   &-wrap {
-    display: flex;
-    justify-content: flex-end;
-
-    transform: translateX(-2.6rem) translateY(-4.3rem);
+    display: block;
+    text-align: end;
+    margin-right: 2.6rem;
+    transform: translateY(-4.3rem);
+    cursor: pointer;
   }
 }
