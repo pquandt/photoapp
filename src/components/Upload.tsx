@@ -45,16 +45,6 @@ export default function Upload({ setFilter, filter }: any) {
             </div>
           )}
 
-          {file && tag && (
-            <div className="progressBar">
-              <ProgressBar
-                file={file}
-                setFile={setFile}
-                tag={tag}
-                setTag={setTag}
-              />
-            </div>
-          )}
           {!file && !tag && <Filter setFilter={setFilter} filter={filter} />}
         </div>
 
@@ -65,6 +55,16 @@ export default function Upload({ setFilter, filter }: any) {
           </label>
         </div>
       </div>
+      {file && tag && (
+        <div className="progressBar">
+          <ProgressBar
+            file={file}
+            setFile={setFile}
+            tag={tag}
+            setTag={setTag}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -30,7 +30,8 @@
   height: 0.5rem;
   background-color: #d4d800;
   border: 1px solid black;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
   .progress-bar-wrap {
     margin: auto;
     width: 80%; }
