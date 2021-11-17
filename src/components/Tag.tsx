@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Tag({ tagName }: any) {
+type tagName = {
+  tagName: string;
+};
+
+export default function Tag({ tagName }: tagName) {
   return <div className="tag">{tagName}</div>;
 }
