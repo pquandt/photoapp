@@ -1,12 +1,5 @@
 import React from "react";
-
-export type ButtonText = {
-  onClick: any;
-  text: string;
-  fontsize?: number;
-  filter?: string;
-  docName?: any;
-};
+import TextButton from "../types/TextButton";
 
 export default function RoundTag({
   text,
@@ -14,7 +7,7 @@ export default function RoundTag({
   fontsize,
   filter,
   docName,
-}: ButtonText) {
+}: TextButton) {
   return (
     <div
       className={filter === docName ? "RoundTag-active" : "RoundTag"}
