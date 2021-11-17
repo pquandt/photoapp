@@ -26,7 +26,7 @@
 
 .editTag {
   position: absolute;
-  top: 14%;
+  top: 12%;
   right: 2%;
   &:hover {
     cursor: pointer;
@@ -48,11 +48,15 @@
   }
 }
 
-@media screen and (max-width: 458px) {
+@media screen and (max-width: 578px) {
   .deleteBtn,
   .editTag {
     display: block;
     position: relative;
-    left: 50%;
+    top: 0;
+  }
+
+  .backdrop img {
+    max-width: 90%;
   }
 }

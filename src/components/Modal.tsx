@@ -27,12 +27,7 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
       <div className="backdrop" onClick={handleClick}>
         <img src={selectedImg} alt="big pic" />
         <div className="deleteBtn">
-          <YellowBtn
-            onClick={deleteData}
-            text="delete"
-            fontsize={18}
-            filter={""}
-          />
+          <YellowBtn onClick={deleteData} text="delete" fontsize={18} />
         </div>
         <div className="editTag">
           <YellowBtn
@@ -41,7 +36,6 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
             }}
             text="Edit"
             fontsize={18}
-            filter={""}
           />
         </div>
         {edit && (
