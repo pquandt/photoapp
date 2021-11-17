@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, Dispatch, SetStateAction } from "react";
 import ProgressBar from "./ProgressBar";
 import Filter from "./Filter";
 import { ReactComponent as AddPhotoBtn } from "../images/addPhotoBtn.svg";
 import YellowBtn from "./YellowBtn";
 
-export default function Upload({ setFilter, filter }: any) {
+export type FilterProps = {
+  filter: string;
+  setFilter: Dispatch<SetStateAction<string>>;
+};
+
+export default function Upload({ setFilter, filter }: FilterProps) {
   const [file, setFile] = useState<File>();
   const [error, setError] = useState("");
   const [tagInput, setTagInput] = useState("");
@@ -12,8 +17,8 @@ export default function Upload({ setFilter, filter }: any) {
 
   const types = ["image/png", "image/jpeg"];
 
-  const changeHandle = (e: any) => {
-    let selected = e.target.files[0];
+  const changeHandle = (e: ChangeEvent<HTMLInputElement>) => {
+    let selected = e.target.files?.[0];
 
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     selected && types.includes(selected.type)
@@ -21,7 +26,7 @@ export default function Upload({ setFilter, filter }: any) {
       : setError("Pls select jpeg or png");
   };
 
-  const tagBtnClick = (e: any) => {
+  const tagBtnClick = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setTag(tagInput);
     setTagInput("");

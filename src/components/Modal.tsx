@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import RoundTag from "./RoundTag";
 import useDelete from "../hooks/useDelete";
 import useEdit from "../hooks/useEdit";
 import YellowBtn from "./YellowBtn";
+import Doc from "../types/Doc";
 
 type ModalProps = {
-  selectedImg: any;
-  setSelectedImg: any;
+  selectedImg: Doc;
+  setSelectedImg: Dispatch<SetStateAction<Doc | null>>;
 };
 
 export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
@@ -25,7 +26,7 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
   return (
     <div>
       <div className="backdrop" onClick={handleClick}>
-        <img src={selectedImg} alt="big pic" />
+        <img src={selectedImg.url} alt="big pic" />
         <div className="deleteBtn">
           <YellowBtn onClick={deleteData} text="delete" fontsize={18} />
         </div>

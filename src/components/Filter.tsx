@@ -1,31 +1,31 @@
 import React from "react";
 import RoundTag from "./RoundTag";
 import useFirestore from "../hooks/useFirestore";
+import { FilterProps } from "./Upload";
+import Doc from "../types/Doc";
 
-export default function Filter({ setFilter, filter }: any) {
-  const { docs } = useFirestore("images");
+export default function Filter({ setFilter, filter }: FilterProps) {
+  const docs = useFirestore("images").docs as Doc[];
 
-  let array: any[] = [];
-  docs.map((doc: any) => array.push({ name: doc.tag }));
-  function getUniqueListBy(array: any, key: any) {
-    return [...new Map(array.map((item: any) => [item[key], item])).values()];
+  function getUniqueListBy<T>(array: Array<T>, key: keyof T): Array<T> {
+    return [...new Map(array.map((item: T) => [item[key], item])).values()];
   }
-  const unique = getUniqueListBy(array, "name");
+  const unique = getUniqueListBy(docs, "tag");
 
   return (
     <div className="filter-wrap">
       <div className="filter">
         {unique &&
           unique.map(
-            (doc: any) =>
-              doc.name && (
-                <div className="filter-item" key={doc.name}>
+            (doc) =>
+              doc.tag && (
+                <div className="filter-item" key={doc.tag}>
                   <RoundTag
-                    docName={doc.name}
+                    docName={doc.tag}
                     onClick={() => {
-                      setFilter(doc.name);
+                      setFilter(doc.tag);
                     }}
-                    text={doc.name}
+                    text={doc.tag}
                     fontsize={16}
                     filter={filter}
                   />
@@ -38,7 +38,7 @@ export default function Filter({ setFilter, filter }: any) {
         <div
           className="x"
           onClick={() => {
-            setFilter(null);
+            setFilter("");
           }}
         >
           X

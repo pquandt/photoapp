@@ -1,24 +1,19 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import useFirestore from "../hooks/useFirestore";
+import Doc from "../types/Doc";
 import Tag from "./Tag";
 
-interface firedoc {
-  tag: string;
-  url: string;
-  id: string;
-}
-
-interface GalleryProps {
+type GalleryProps = {
   filter: string;
-  setSelectedImg: any;
-}
+  setSelectedImg: Dispatch<SetStateAction<Doc | null>>;
+};
 
 export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
-  const { docs } = useFirestore("images");
+  const docs = useFirestore("images").docs as Doc[];
 
-  const filterArray: any[] = [];
+  const filterArray: Doc[] = [];
 
-  docs.forEach((item: firedoc) => {
+  docs.forEach((item) => {
     if (item.tag === filter) {
       filterArray.push(item);
     }
@@ -27,12 +22,9 @@ export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
   return (
     <div className="img-grid">
       {filterArray.length > 0 &&
-        filterArray.map((doc: firedoc) => (
+        filterArray.map((doc) => (
           <div key={doc.id}>
-            <figure
-              className="img-wrap"
-              onClick={() => setSelectedImg([doc.url, doc.id])}
-            >
+            <figure className="img-wrap" onClick={() => setSelectedImg(doc)}>
               <img src={doc.url} alt="imagecouldntbefound" />
               <figcaption className="tag-wrap">
                 <Tag tagName={doc.tag} />
@@ -42,12 +34,9 @@ export default function Gallery({ filter, setSelectedImg }: GalleryProps) {
         ))}
 
       {filterArray.length === 0 &&
-        docs.map((doc: firedoc) => (
+        docs.map((doc) => (
           <div key={doc.id}>
-            <figure
-              className="img-wrap"
-              onClick={() => setSelectedImg([doc.url, doc.id])}
-            >
+            <figure className="img-wrap" onClick={() => setSelectedImg(doc)}>
               <img src={doc.url} alt="imagecouldntbefound" />
               <figcaption className="tag-wrap">
                 <Tag tagName={doc.tag} />
