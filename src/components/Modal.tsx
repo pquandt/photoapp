@@ -1,5 +1,5 @@
 import React, { useState, Dispatch, SetStateAction } from "react";
-import RoundTag from "./RoundTag";
+
 import useDelete from "../hooks/useDelete";
 import useEdit from "../hooks/useEdit";
 import YellowBtn from "./YellowBtn";
@@ -51,7 +51,7 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
               />
             </div>
             <div className="changeTag-btn">
-              <RoundTag
+              <YellowBtn
                 onClick={handleClickTag}
                 text="Change Tag"
                 fontsize={16}

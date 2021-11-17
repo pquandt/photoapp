@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonText } from "./RoundTag";
+import TextButton from "../types/TextButton";
 
-export default function YellowBtn({ onClick, text, fontsize }: ButtonText) {
+export default function YellowBtn({ onClick, text, fontsize }: TextButton) {
   return (
     <div
       className="yellow-btn"
